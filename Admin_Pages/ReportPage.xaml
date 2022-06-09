@@ -1,0 +1,84 @@
+﻿<Page x:Class="CarParker.Admin_Pages.ReportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CarParker.Admin_Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="1000"
+      Title="ReportPage">
+
+    <Grid  Background="#495464">
+
+
+        <Grid x:Name="CalenderGrid"  Height="300" Width="200" Margin="-800,20,0,0" Background="CadetBlue" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="170"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Label Content="Select Date" Grid.Row="0" Foreground="White" FontSize="20" HorizontalContentAlignment="Center"/>
+            <Calendar x:Name="Calender" Grid.Row="1" SelectedDatesChanged="Calender_SelectedDatesChanged" DisplayDateChanged="Calender_DisplayDateChanged" />
+            <Label x:Name="DateLabel" Grid.Row="2" Content="-" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button x:Name="SearchButton" Grid.Row="3" Content="Search" Background="SeaGreen" Click="SearchButton_Click" Foreground="White" FontSize="20"/>
+        </Grid>
+
+
+
+
+
+        <Grid x:Name="GridTable" Height="400" Width="720" Background="#495464" Margin="-40,50,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="120"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+            <Label x:Name="TestName"  Content="Phone Number" Background="CadetBlue" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="5" Foreground="White"/>
+            <Label Grid.Column="1" Content="Parking Time" Background="CadetBlue" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="5" Foreground="White"/>
+            <Label Grid.Column="2" Content="Exit Time" Background="CadetBlue" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="5" Foreground="White"/>
+            <Label Grid.Column="3" Content="Date" Background="CadetBlue" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="5" Foreground="White"/>
+            <Label Grid.Column="4" Content="Map Name" Background="CadetBlue" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="5" Foreground="White"/>
+            <Label Grid.Column="5" Content="Slot" Background="CadetBlue" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="5" Foreground="White"/>
+            <ScrollViewer Grid.Row="1" Grid.ColumnSpan="6" Background="#495464" VerticalScrollBarVisibility="Hidden">
+                <Grid x:Name="ContentGrid">
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+
+                    </Grid.RowDefinitions>
+                </Grid>
+
+            </ScrollViewer>
+
+
+
+
+
+
+
+
+        </Grid>
+        <Label x:Name="DateRangelabel" Content="All Records" Foreground="White" Margin="-100,-399,0,0" Height="30" Width="70" d:LayoutOverrides="HorizontalAlignment" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Gray"/>
+        <Button x:Name="DateRangeLeftBtn" Content="-" Height="30" Margin="-200,-399,0,0" Width="20" Background="CadetBlue" Click="DateRangeLeftBtn_Click" />
+        <Button x:Name="DateRangeRightBtn"   Content="-" Height="30" Margin="0,-399,0,0" Width="20" Background="CadetBlue" Click="DateRangeRightBtn_Click" />
+
+    </Grid>
+</Page>

@@ -1,0 +1,113 @@
+﻿<Page x:Class="CarParker.Parking"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CarParker"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Title="Parking">
+
+
+    <Page.Resources>
+       
+
+    </Page.Resources>
+
+    <Canvas  x:Name="MainGrid" Background="#343f56" PreviewKeyDown="MainGrid_PreviewKeyDown">
+
+
+
+      
+
+
+        <Label x:Name="SlotavailabelText" Content="Slots Available" Canvas.Top="40" Canvas.Left="550" FontSize="18" Background="#F9F9F9" Foreground="#343f56" />
+        <Label x:Name="AvailabeSlotLabel" Content=" " Canvas.Top="40" Canvas.Left="670" Background="#F9F9F9" FontSize="18" Foreground="#343f56" />
+
+        <Label x:Name="SlotFilledText" Content="Slots Filled" Canvas.Top="40" Canvas.Left="745" FontSize="18" Background="#F9F9F9"  Foreground="#343f56"/>
+        <Label x:Name="FilledSlotLabel" Content=" " Canvas.Top="40" Canvas.Left="840" Background="#F9F9F9" FontSize="18" Foreground="#343f56" />
+
+
+
+        <Button Content="OpenMap" Background="#F9F9F9" Height="50" Width="100" x:Name="OpenMapBtn" Click="OpenMapBtn_Click" 
+                    Canvas.Top="60" Canvas.Left="20" >
+                
+            </Button>
+            <Grid  x:Name="FreeSlotInfoGrid" Height="400" Width="170" Canvas.Top="200" Canvas.Left="15"
+                   Background="#F9F9F9" ShowGridLines="false">
+                
+                  <Grid.RowDefinitions>
+                     <RowDefinition Height="150"></RowDefinition>
+                     <RowDefinition Height="50"></RowDefinition>
+                     <RowDefinition Height="50"></RowDefinition>
+                     <RowDefinition Height="50"></RowDefinition>
+                     <RowDefinition Height="50"></RowDefinition>
+                     <RowDefinition Height="50"></RowDefinition>
+                  </Grid.RowDefinitions>
+
+            <Label x:Name="FreeSlotLabel" Height="130" Width="130" Content="A1" Background="#DDDDDD"
+                   FontSize="50" 
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center">
+                  </Label>
+
+            <Label  x:Name="DateLabel" Grid.Row="1" Content="Date" Foreground="#343f56" FontSize="25" 
+                    HorizontalContentAlignment="Center" Background="#DDDDDD" Margin="5"/>
+
+            <Label  x:Name="TimeLabel" Grid.Row="2" Content="Time" Foreground="#343f56" FontSize="25" 
+                    HorizontalContentAlignment="Center" Background="#DDDDDD" Margin="5"/>
+
+            <TextBox x:Name="Number_Box"  Grid.Row="4" FontSize="32"  Background="#DEEDF0" />
+
+            <Button x:Name="AlotSlotBtn" Grid.Row="5" Content="Alot Slot" FontSize="20" Background="#194350" 
+                    Foreground="White" Click="AlotSlotBtn_Click">    
+                      
+                  </Button>
+
+
+        </Grid>
+        
+           
+        
+        
+        
+        
+           <ScrollViewer x:Name="Scrollview1"  HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden" Grid.Column="1"
+                    
+                      Height="630" Width="1070" Canvas.Left="200" Canvas.Top="120" >
+                    <StackPanel>
+                <Canvas  x:Name="Scrol1Canvas" Background="#495464" Width="6000" Height="6000" >
+
+
+
+                </Canvas>
+                    </StackPanel>
+
+           </ScrollViewer>
+        <TextBox  x:Name="DebugBox" Height="400" Width="600" Margin="400,200,0,0" Background="Black" Foreground="Green" Visibility="Hidden"/>
+
+
+
+        <Canvas x:Name="PrintCanvas" Height="700" Width="500" Margin="440,50,0,0" Background="#EFEFEF"  Visibility="Hidden" >
+
+            <Canvas.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="30" Direction="290" ShadowDepth="10"/>
+            </Canvas.Effect>
+            
+            
+            
+            <Image x:Name="PrintMapImage" Margin="-10,30,0,0"  Stretch="Fill" Height="400" Width="500" />
+            <Label FontSize="40" Content="Parking Pass" Margin="125,0,0,0" />
+            <Label Content="Entrance Time :" FontSize="30" Margin="60,450,0,0"/>
+            <Label x:Name="TicketEntranceTIme" Content="5325"  Margin="300,450,0,0" FontSize="30"/>
+            <Label Content="Aloted Slot      :" Margin="60,520,0,0" FontSize="30"/>
+            <Label x:Name="TicketslotID" Content="A31"  Margin="300,520,0,0"  FontSize="30"/>
+            <Button x:Name="TicketOkButton" Height="50" Width="200" Margin="140,600,0,0" Content="OK" FontSize="30" Click="TicketOkButton_Click"/>
+
+
+        </Canvas>
+
+
+    </Canvas>
+</Page>

@@ -1,0 +1,34 @@
+﻿<Page x:Class="CarParker.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CarParker"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Title="HomePage">
+
+
+    <Grid Background="#343f56">
+        <Border Height="500" Width="1303"  Margin="-8,-300,0,0">
+
+            <Border.Background>
+                <ImageBrush  ImageSource="Images/Home4.jpg"/>
+            </Border.Background>
+
+
+
+        </Border>
+
+        <!--<Label Content="Coral Mall" Foreground="White" FontSize="70" Height="100" Width="400" Margin="-300,-510,0,0"/> -->
+        <Label Content="Coral Park Hub" Foreground="White" FontSize="100" Height="150" Margin="294,531,294,87" FontFamily="fonts/WinterYesterday.ttf">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="80" ShadowDepth="5" Color="White"/>
+            </Label.Effect>
+         
+        </Label>
+
+
+    </Grid>
+
+</Page>
